@@ -1,0 +1,695 @@
+/* Base Styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header & Navigation */
+header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+}
+
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  position: relative;
+  margin: 0 10px;
+}
+
+.menu li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.menu li a:hover {
+  background-color: #34495e;
+  border-radius: 4px;
+}
+
+/* Dropdown Menu */
+.has-dropdown .dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #34495e;
+  min-width: 200px;
+  border-radius: 0 0 4px 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 10;
+}
+
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  display: block;
+  margin: 0;
+}
+
+.dropdown li a {
+  padding: 10px 15px;
+  border-bottom: 1px solid #2c3e50;
+}
+
+.dropdown li:last-child a {
+  border-bottom: none;
+}
+
+.dropdown-icon {
+  font-size: 0.7rem;
+  margin-left: 5px;
+}
+
+/* Search Box */
+.search-container {
+  display: flex;
+  margin-left: 20px;
+}
+
+.search-box {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 4px 0 0 4px;
+  width: 200px;
+}
+
+.search-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.search-button:hover {
+  background-color: #c0392b;
+}
+
+/* Hero Section */
+.hero {
+  background-image: url('./assets/health.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* Features Section */
+.features {
+  padding: 60px 20px;
+  background-color: #ecf0f1;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.feature-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.feature-item:hover {
+  transform: translateY(-10px);
+}
+
+.feature-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.feature-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #e74c3c;
+}
+
+.feature-item p {
+  color: #7f8c8d;
+}
+
+/* Nutrients Section (health-diet.html) */
+.nutrients {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.nutrients h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.nutrient-item {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.nutrient-item h3 {
+  color: #e74c3c;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.nutrient-item img {
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.nutrient-item p {
+  margin-bottom: 15px;
+}
+
+.nutrient-item ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.nutrient-item ul li {
+  margin-bottom: 8px;
+}
+
+/* Contact Form */
+.contact {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-family: inherit;
+}
+
+.form-group textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.submit-button {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.submit-button:hover {
+  background-color: #c0392b;
+}
+
+/* Footer */
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .menu {
+      flex-direction: column;
+      width: 100%;
+  }
+  
+  .menu li {
+      margin: 5px 0;
+  }
+  
+  .has-dropdown .dropdown {
+      position: static;
+      display: none;
+      width: 100%;
+  }
+  
+  .search-container {
+      margin: 10px 0;
+      width: 100%;
+  }
+  
+  .search-box {
+      width: 100%;
+  }
+  
+  .hero h1 {
+      font-size: 2rem;
+  }
+  
+  .feature-item {
+      width: 100%;
+  }
+  
+  .nutrient-item img {
+      float: none;
+      display: block;
+      margin: 0 auto 15px;
+  }
+}
+
+/* About Page Styles */
+.about-intro, .mission {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.team {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  text-align: center;
+  width: 250px;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #e74c3c;
+}
+
+.history {
+  padding: 40px 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.milestones {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.milestone {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Nutrient Detail Pages */
+.nutrient-detail {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.nutrient-image img {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.nutrient-content {
+  margin-top: 30px;
+}
+
+.food-sources, .vitamin-types, .mineral-types, .fat-types {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.food-category, .vitamin-type, .mineral-type, .fat-type {
+  flex: 1;
+  min-width: 250px;
+  background: white;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.fat-type.good {
+  border-left: 4px solid #2ecc71;
+}
+
+.fat-type.bad {
+  border-left: 4px solid #e74c3c;
+}
+
+.deficiency-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.deficiency-table th, .deficiency-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.deficiency-table th {
+  background-color: #f2f2f2;
+}
+
+.back-link-container {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #2c3e50;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.back-link:hover {
+  background-color: #1a252f;
+}
+
+/* Health Food Page Styles */
+.health-food {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.health-food .intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.condition-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.condition-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.condition-card:hover {
+  transform: translateY(-5px);
+}
+
+.condition-card h2 {
+  color: #e74c3c;
+  border-bottom: 2px solid #f1f1f1;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.food-list h3 {
+  color: #2c3e50;
+  margin: 15px 0 10px;
+  font-size: 1.1rem;
+}
+
+.food-list ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.food-list li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.food-list li strong {
+  color: #27ae60;
+}
+
+.note {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-top: 15px;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin-top: 10px;
+}
+
+@media (max-width: 768px) {
+  .condition-cards {
+      grid-template-columns: 1fr;
+  }
+}
+
+/* Remedies Page Styles */
+.remedies {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.remedies .intro {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+.remedy-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.remedy-card {
+  background-color: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+  border-top: 4px solid #27ae60;
+}
+
+.remedy-card:hover {
+  transform: translateY(-5px);
+}
+
+.remedy-card h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  font-size: 1.4rem;
+}
+
+.remedy-content h3 {
+  color: #e74c3c;
+  margin: 15px 0 10px;
+  font-size: 1.1rem;
+}
+
+.remedy-content ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.remedy-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.remedy-content li strong {
+  color: #27ae60;
+}
+
+.warning {
+  background-color: #fff3cd;
+  color: #856404;
+  padding: 10px;
+  border-radius: 4px;
+  margin-top: 15px;
+  font-size: 0.9rem;
+  border-left: 4px solid #ffeeba;
+}
+
+.ayurvedic-tips {
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 8px;
+  margin-top: 50px;
+  border: 1px dashed #27ae60;
+}
+
+.ayurvedic-tips h2 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.ayurvedic-tips ul {
+  columns: 2;
+  column-gap: 40px;
+}
+
+.disclaimer {
+  font-size: 0.8rem;
+  color: #95a5a6;
+  margin-top: 10px;
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 768px) {
+  .remedy-cards {
+      grid-template-columns: 1fr;
+  }
+  
+  .ayurvedic-tips ul {
+      columns: 1;
+  }
+}
